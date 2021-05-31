@@ -22,6 +22,7 @@ public class TowerBehaviour : MonoBehaviour
     float distanceEnemyAux;
     GameObject enemyTarget;
 
+    public GameObject EnemyTarget { get => enemyTarget; set => enemyTarget = value; }
 
     void Start()
     {
