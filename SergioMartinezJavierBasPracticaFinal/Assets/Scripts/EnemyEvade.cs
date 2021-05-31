@@ -14,6 +14,8 @@ public class EnemyEvade : MonoBehaviour
     public LayerMask bulletMask;
 
     public float evadeDistance;
+    public float avoidTime;
+    float timerAvoid;
 
     bool avoiding;
 
@@ -34,21 +36,37 @@ public class EnemyEvade : MonoBehaviour
     {
         if (target != null)
         {
-            Rigidbody targetRB = target.GetComponent<Rigidbody>();
-
             if (Vector3.Distance(transform.position, target.position) <= evadeDistance)
             {
-                Vector3 distanceToTarget = target.transform.position - transform.position;
+                timerAvoid = Time.time + avoidTime;
 
-                float distance = distanceToTarget.magnitude;
+                parent.canMove = false;
 
-                float currentSpeed = rb.velocity.magnitude;
+                avoiding = true;
+            }
+        }
 
-                float prediction = distance / currentSpeed;
+        if (avoiding)
+        {
+            Rigidbody targetRB = target.GetComponent<Rigidbody>();
 
-                Vector3 explicitTarget = target.transform.position + targetRB.velocity * prediction;
+            Vector3 distanceToTarget = target.transform.position - transform.position;
 
-                rb.velocity = (transform.position - explicitTarget).normalized * parent.speed;
+            float distance = distanceToTarget.magnitude;
+
+            float currentSpeed = rb.velocity.magnitude;
+
+            float prediction = distance / currentSpeed;
+
+            Vector3 explicitTarget = target.transform.position + targetRB.velocity * prediction;
+
+            rb.velocity = (transform.position - explicitTarget).normalized * parent.speed;
+
+            if (Time.time >= timerAvoid)
+            {
+                parent.canMove = true;
+
+                avoiding = false;
             }
         }
     }
