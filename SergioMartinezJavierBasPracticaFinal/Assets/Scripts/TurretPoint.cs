@@ -7,9 +7,12 @@ public class TurretPoint : MonoBehaviour
     public Material freeMat, selectedMat, occupiedMat;
     public MeshRenderer meshR;
 
+    TowerBehaviour tower;
+
     void Start()
     {
-        
+        if (tower == null)
+            meshR.material = freeMat;
     }
 
     void Update()
