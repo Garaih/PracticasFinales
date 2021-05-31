@@ -9,7 +9,7 @@ public class Castle : MonoBehaviour
 
     void Start()
     {
-        
+        currentHP = maxHP;
     }
 
     void Update()
@@ -19,11 +19,13 @@ public class Castle : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.GetComponent<EnemyBase>() != null)
         {
             if (other.TryGetComponent(out EnemyBase enemy))
             {
                 TakeDamage(enemy.damage);
+
+                Destroy(other.gameObject);
             }
         }
     }
