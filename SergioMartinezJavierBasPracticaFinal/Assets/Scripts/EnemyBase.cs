@@ -21,6 +21,8 @@ public class EnemyBase : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        currentHP = maxHP;
     }
 
     void Update()
