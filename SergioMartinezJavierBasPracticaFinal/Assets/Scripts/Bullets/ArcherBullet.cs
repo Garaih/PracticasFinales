@@ -8,8 +8,6 @@ public class ArcherBullet : BulletBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        print("guarra");
-
         if (other.gameObject.layer == enemyLayer)
         {
             other.gameObject.GetComponent<EnemyBase>().TakeDamage(damage);

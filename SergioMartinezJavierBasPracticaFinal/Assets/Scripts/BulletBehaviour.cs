@@ -10,6 +10,7 @@ public class BulletBehaviour : MonoBehaviour
     public float Speed;
     public float damage;
     public LayerMask enemyLayer;
+    public float lifeTime = 10;
 
     protected virtual void Start()
     {
@@ -18,24 +19,28 @@ public class BulletBehaviour : MonoBehaviour
         rb_Comp.velocity = transform.forward * Speed;
 
         ChooseTarget();
+
+        Destroy(this.gameObject, lifeTime);
     }
 
     protected virtual void Update()
     {
-        Vector3 distanceToTarget = target.position - transform.position;
+        if (target != null)
+        {
+            Vector3 distanceToTarget = target.position - transform.position;
 
-        float distance = distanceToTarget.magnitude;
+            float distance = distanceToTarget.magnitude;
 
-        float speed = rb_Comp.velocity.magnitude;
+            float speed = rb_Comp.velocity.magnitude;
 
-        float prediction = distance / speed;
+            float prediction = distance / speed;
 
-        Vector3 explicitTarget = target.position + target.velocity * prediction;
+            Vector3 explicitTarget = target.position + target.velocity * prediction;
 
-        rb_Comp.velocity = (explicitTarget - transform.position).normalized * Speed;
+            rb_Comp.velocity = (explicitTarget - transform.position).normalized * Speed;
 
-        transform.rotation = Quaternion.LookRotation(explicitTarget - transform.position);
-
+            transform.rotation = Quaternion.LookRotation(explicitTarget - transform.position);
+        }
     }
 
     void ChooseTarget()
