@@ -39,6 +39,7 @@ public class EnemyEvade : MonoBehaviour
             if (Vector3.Distance(transform.position, target.position) <= evadeDistance)
             {
                 Vector3 distanceToTarget = target.transform.position - transform.position;
+
                 float distance = distanceToTarget.magnitude;
 
                 float currentSpeed = rb.velocity.magnitude;
