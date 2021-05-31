@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int money;
     public int currentRound;
     public int[] killsToIncreaseRound;
+    int enemiesKilled;
 
     private void Awake()
     {
@@ -23,5 +24,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void CheckRound()
+    {
+        enemiesKilled++;
+
+        if (enemiesKilled >= killsToIncreaseRound[currentRound])
+        {
+            currentRound++;
+        }
     }
 }
