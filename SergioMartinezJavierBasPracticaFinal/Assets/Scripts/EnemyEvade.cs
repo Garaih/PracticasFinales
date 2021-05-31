@@ -34,6 +34,8 @@ public class EnemyEvade : MonoBehaviour
     {
         if (target != null)
         {
+            Rigidbody targetRB = target.GetComponent<Rigidbody>();
+
             if (Vector3.Distance(transform.position, target.position) <= evadeDistance)
             {
                 Vector3 distanceToTarget = target.transform.position - transform.position;
@@ -43,7 +45,7 @@ public class EnemyEvade : MonoBehaviour
 
                 float prediction = distance / currentSpeed;
 
-                Vector3 explicitTarget = target.transform.position + target.rb.velocity * prediction;
+                Vector3 explicitTarget = target.transform.position + targetRB.velocity * prediction;
 
                 rb.velocity = (transform.position - explicitTarget).normalized * parent.speed;
             }
