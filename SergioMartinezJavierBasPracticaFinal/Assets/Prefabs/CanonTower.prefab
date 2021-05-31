@@ -48,7 +48,7 @@ MonoBehaviour:
   bullet: {fileID: 2706815132247908939, guid: 3d65f8054f2d67f448b78068eb540997, type: 3}
   firePoint: {fileID: 7431668945405729501}
   damage: 10
-  bulletSpeed: 5
+  bulletSpeed: 20
   radius: 10
   cost: 100
   level: 1

@@ -313,7 +313,7 @@ MonoBehaviour:
   bullet: {fileID: 7140846054694115873, guid: 3d8a6e5492607d14d96b026d3b2ab3a7, type: 3}
   firePoint: {fileID: 6560479771202318101}
   damage: 10
-  bulletSpeed: 5
+  bulletSpeed: 40
   radius: 10
   cost: 100
   level: 1

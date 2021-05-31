@@ -6,7 +6,7 @@ public class MageBullet : BulletBehaviour
 {
     public int explosionRadius;
 
-    private void OnCollisionEnter()
+    private void OnTriggerEnter()
     {
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRadius, enemyLayer);
         //OnDrawGizmosSelected();

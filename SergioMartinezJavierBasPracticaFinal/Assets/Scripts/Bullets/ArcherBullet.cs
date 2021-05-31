@@ -6,7 +6,7 @@ public class ArcherBullet : BulletBehaviour
 {
     public int explosionRadius;
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == 8)
         {
