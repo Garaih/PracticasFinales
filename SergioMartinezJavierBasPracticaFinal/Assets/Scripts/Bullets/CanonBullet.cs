@@ -14,6 +14,6 @@ public class CanonBullet : BulletBehaviour
             enemy.gameObject.GetComponent<EnemyBase>().TakeDamage(damage);
         }
 
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }

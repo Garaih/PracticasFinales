@@ -26,7 +26,9 @@ public class TowerBehaviour : MonoBehaviour
 
     void Start()
     {
-        level = 1;   
+        level = 1;
+
+        shootTimer = Time.time + cadence;
     }
 
     void Update()
@@ -55,7 +57,6 @@ public class TowerBehaviour : MonoBehaviour
 
     void Shoot()
     {
-        shootTimer += Time.time;
         newBullet = Instantiate(bullet, firePoint.transform.position, bullet.transform.rotation);
 
         if(newBullet.TryGetComponent(out BulletBehaviour bulletComp))
@@ -64,6 +65,8 @@ public class TowerBehaviour : MonoBehaviour
             bulletComp.targetEnemy = enemyTarget;
             bulletComp.Speed = bulletSpeed;
         }
+
+        shootTimer = Time.time + cadence;
     }
 
     public void LevelUp()
