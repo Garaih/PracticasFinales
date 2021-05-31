@@ -9,6 +9,7 @@ public class MageBullet : BulletBehaviour
     private void OnCollisionEnter()
     {
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRadius, enemyLayer);
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
         foreach (Collider enemy in enemies)
         {
             enemy.gameObject.GetComponent<EnemyBase>().TakeDamage(damage);
