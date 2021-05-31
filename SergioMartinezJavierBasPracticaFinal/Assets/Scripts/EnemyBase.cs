@@ -16,13 +16,13 @@ public class EnemyBase : MonoBehaviour
     public float maxHP;
     float currentHP;
 
+    public int money = 5;
+
     public bool canMove;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
-        currentHP = maxHP;
     }
 
     void Update()
@@ -51,6 +51,13 @@ public class EnemyBase : MonoBehaviour
     {
         pathPoints = array;
 
+        if (GameManager.Instance.currentRound >= 2)
+        {
+            maxHP *= GameManager.Instance.currentRound * .5f;
+        }
+
+        currentHP = maxHP;
+
         canMove = true;
     }
 
@@ -61,6 +68,8 @@ public class EnemyBase : MonoBehaviour
         if (currentHP <= 0)
         {
             GameManager.Instance.CheckRound();
+
+            GameManager.Instance.money += money;
 
             Destroy(this.gameObject);
         }
