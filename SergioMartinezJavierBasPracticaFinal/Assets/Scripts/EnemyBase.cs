@@ -9,7 +9,6 @@ public class EnemyBase : MonoBehaviour
     public float maxHP;
     float currentHP;
 
-
     public bool canMove;
 
     void Start()
