@@ -6,6 +6,9 @@ public class TowerBehaviour : MonoBehaviour
 {
     public GameObject bullet;
     GameObject newBullet;
+    public GameObject firePoint;
+    public float damage;
+    public float bulletSpeed;
 
     public int radius;
     public int cost;
@@ -52,7 +55,14 @@ public class TowerBehaviour : MonoBehaviour
     void Shoot()
     {
         shootTimer += Time.time;
-        newBullet = Instantiate(bullet, transform.position, bullet.transform.rotation);
+        newBullet = Instantiate(bullet, firePoint.transform.position, bullet.transform.rotation);
+
+        if(newBullet.TryGetComponent(out BulletBehaviour bulletComp))
+        {
+            bulletComp.damage = damage;
+            bulletComp.targetEnemy = enemyTarget;
+            bulletComp.Speed = bulletSpeed;
+        }
     }
 
     public void LevelUp()
@@ -63,6 +73,7 @@ public class TowerBehaviour : MonoBehaviour
             cadence -= .5f;
             cost += 100;
             radius += 10;
+            damage += 50;
         }
 
         else
