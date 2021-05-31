@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 
         if (enemiesKilled >= killsToIncreaseRound[currentRound])
         {
+            enemiesKilled = 0;
             currentRound++;
         }
     }
