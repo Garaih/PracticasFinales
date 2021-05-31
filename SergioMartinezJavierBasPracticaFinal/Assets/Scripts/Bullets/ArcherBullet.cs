@@ -8,7 +8,7 @@ public class ArcherBullet : BulletBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == enemyLayer)
+        if (other.gameObject.layer == 8)
         {
             other.gameObject.GetComponent<EnemyBase>().TakeDamage(damage);
         }

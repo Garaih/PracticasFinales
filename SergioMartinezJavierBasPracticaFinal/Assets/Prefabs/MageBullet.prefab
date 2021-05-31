@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7140846054694115902}
   - component: {fileID: 7140846054694115903}
   - component: {fileID: 7140846054694115872}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MageBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

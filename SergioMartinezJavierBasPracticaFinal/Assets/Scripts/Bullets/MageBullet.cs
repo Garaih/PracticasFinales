@@ -9,7 +9,7 @@ public class MageBullet : BulletBehaviour
     private void OnCollisionEnter()
     {
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRadius, enemyLayer);
-        OnDrawGizmosSelected();
+        //OnDrawGizmosSelected();
         foreach (Collider enemy in enemies)
         {
             enemy.gameObject.GetComponent<EnemyBase>().TakeDamage(damage);
@@ -18,9 +18,9 @@ public class MageBullet : BulletBehaviour
         Destroy(this.gameObject);
     }
 
-    void OnDrawGizmosSelected()
+    /*void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explosionRadius);
-    }
+    }*/
 }

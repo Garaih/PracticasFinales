@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6838388393152047936}
   - component: {fileID: 6838388393152047937}
   - component: {fileID: 6838388393152047938}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ArcherBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

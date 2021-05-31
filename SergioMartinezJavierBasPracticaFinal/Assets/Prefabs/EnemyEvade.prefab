@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3264974775862205408}
   - component: {fileID: 4323695328963874949}
   - component: {fileID: 6523972049151517016}
+  - component: {fileID: 5273188878880890122}
   m_Layer: 8
   m_Name: EnemyEvade
   m_TagString: Untagged
@@ -132,3 +133,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &5273188878880890122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2669476923690265910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09cd75ec048f3194fae40155a1d7b683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetweenChecks: 1
+  radius: 10
+  bulletMask:
+    serializedVersion: 2
+    m_Bits: 512
+  evadeDistance: 4
+  avoidTime: 2
