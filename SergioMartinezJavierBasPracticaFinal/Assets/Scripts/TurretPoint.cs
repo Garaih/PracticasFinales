@@ -45,6 +45,8 @@ public class TurretPoint : MonoBehaviour
             }
         }
 
+        meshR.material = selectedMat;
+
         interacting = true;
 
         cm.interactPoint = this;
@@ -52,5 +54,15 @@ public class TurretPoint : MonoBehaviour
         cm.parentPivot.localPosition = Camera.main.WorldToScreenPoint(transform.position);
 
         cm.shopPanel.SetActive(true);
+
+        if (tower != null)
+        {
+            cm.levelUpText.text = "Level Up: " + tower.cost;
+        }
+
+        else
+        {
+            cm.levelUpText.text = "Level Up: ???";
+        }
     }
 }

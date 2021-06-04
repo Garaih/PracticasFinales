@@ -50,8 +50,9 @@ MonoBehaviour:
   damage: 10
   bulletSpeed: 20
   radius: 10
-  cost: 100
+  cost: 200
   level: 1
+  maxLevel: 0
   cadence: 2
   enemyLayer:
     serializedVersion: 2

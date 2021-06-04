@@ -13,6 +13,7 @@ public class CanvasManager : MonoBehaviour
     public TurretPoint interactPoint;
 
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI levelUpText;
 
     void Start()
     {
@@ -39,6 +40,8 @@ public class CanvasManager : MonoBehaviour
                 interactPoint.tower = newTower.GetComponent<TowerBehaviour>();
 
                 interactPoint.meshR.material = interactPoint.occupiedMat;
+
+                levelUpText.text = "Level Up: " + interactPoint.tower.cost;
             }
         }
     }
@@ -54,6 +57,8 @@ public class CanvasManager : MonoBehaviour
             Destroy(interactPoint.tower.gameObject);
 
             interactPoint.meshR.material = interactPoint.freeMat;
+
+            levelUpText.text = "Level Up: ???";
         }
     }
 
@@ -70,6 +75,8 @@ public class CanvasManager : MonoBehaviour
                     GameManager.Instance.UpdateMoneyText();
 
                     interactPoint.tower.LevelUp();
+
+                    levelUpText.text = "Level Up: " + interactPoint.tower.cost;
                 }
             }
         }
@@ -78,5 +85,15 @@ public class CanvasManager : MonoBehaviour
     public void ClosePanel()
     {
         shopPanel.SetActive(false);
+
+        if (interactPoint.tower != null)
+        {
+            interactPoint.meshR.material = interactPoint.occupiedMat;
+        }
+
+        else
+        {
+            interactPoint.meshR.material = interactPoint.freeMat;
+        }
     }
 }
