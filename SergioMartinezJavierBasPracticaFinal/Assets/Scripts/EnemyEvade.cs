@@ -44,29 +44,29 @@ public class EnemyEvade : MonoBehaviour
 
                 avoiding = true;
             }
-        }
 
-        if (avoiding)
-        {
-            Rigidbody targetRB = target.GetComponent<Rigidbody>();
-
-            Vector3 distanceToTarget = target.transform.position - transform.position;
-
-            float distance = distanceToTarget.magnitude;
-
-            float currentSpeed = rb.velocity.magnitude;
-
-            float prediction = distance / currentSpeed;
-
-            Vector3 explicitTarget = target.transform.position + targetRB.velocity * prediction;
-
-            rb.velocity = (transform.position - explicitTarget).normalized * parent.speed;
-
-            if (Time.time >= timerAvoid)
+            if (avoiding)
             {
-                parent.canMove = true;
+                Rigidbody targetRB = target.GetComponent<Rigidbody>();
 
-                avoiding = false;
+                Vector3 distanceToTarget = target.transform.position - transform.position;
+
+                float distance = distanceToTarget.magnitude;
+
+                float currentSpeed = rb.velocity.magnitude;
+
+                float prediction = distance / currentSpeed;
+
+                Vector3 explicitTarget = target.transform.position + targetRB.velocity * prediction;
+
+                rb.velocity = (transform.position - explicitTarget).normalized * parent.speed;
+
+                if (Time.time >= timerAvoid)
+                {
+                    parent.canMove = true;
+
+                    avoiding = false;
+                }
             }
         }
     }
