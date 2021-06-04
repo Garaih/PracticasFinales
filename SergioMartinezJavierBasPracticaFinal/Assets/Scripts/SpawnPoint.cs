@@ -41,18 +41,6 @@ public class SpawnPoint : MonoBehaviour
                 }
             }
 
-            else if (GameManager.Instance.currentRound < 3)
-            {
-                int value = Random.Range(0, enemiesToSpawn.Length - 1);
-
-                GameObject newEnemy = Instantiate(enemiesToSpawn[value], transform.position, enemiesToSpawn[value].transform.rotation);
-
-                if (newEnemy.TryGetComponent(out EnemyBase enemy))
-                {
-                    enemy.SetPath(pathPoints);
-                }
-            }
-
             else
             {
                 int value = Random.Range(0, enemiesToSpawn.Length);

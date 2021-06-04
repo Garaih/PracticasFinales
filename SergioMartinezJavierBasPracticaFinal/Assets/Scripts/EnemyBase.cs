@@ -51,9 +51,9 @@ public class EnemyBase : MonoBehaviour
     {
         pathPoints = array;
 
-        if (GameManager.Instance.currentRound >= 2)
+        if (GameManager.Instance.currentRound >= 1)
         {
-            maxHP *= GameManager.Instance.currentRound * .5f;
+            maxHP *= GameManager.Instance.currentRound;
         }
 
         currentHP = maxHP;

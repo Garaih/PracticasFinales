@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3114860900238455591}
+  - component: {fileID: 2678091543374460126}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -30,3 +31,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2678091543374460126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7896477827734113867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088962ce8b6609f418ba1487014cf57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesToSpawn:
+  - {fileID: 2669476923690265910, guid: 0ff4b37e84af45f4d919badb7c6d0544, type: 3}
+  - {fileID: 2669476923690265910, guid: 1f1bf4b8d5b761f40aecde7a18c720c6, type: 3}
+  - {fileID: 2669476923690265910, guid: 2d0369a51ea290641bc08e841bddcc3a, type: 3}
+  - {fileID: 2669476923690265910, guid: 3ed0f74958ece1342ac3101ba1e9ce8e, type: 3}
+  pathPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  spawnDelay: 5
