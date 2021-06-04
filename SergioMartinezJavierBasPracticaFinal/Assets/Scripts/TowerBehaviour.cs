@@ -10,7 +10,7 @@ public class TowerBehaviour : MonoBehaviour
     public float damage;
     public float bulletSpeed;
 
-    public int radius;
+    public float radius;
     public int cost;
     public int level;
     public bool maxLevel = false;
@@ -74,9 +74,9 @@ public class TowerBehaviour : MonoBehaviour
         if(level < 5)
         {
             level++;
-            cadence -= .5f;
+            cadence -= .05f;
             cost += 100;
-            radius += 10;
+            radius += .5f;
             damage += 50;
         }
 

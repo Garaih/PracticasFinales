@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class MageBullet : BulletBehaviour
 {
-    public int explosionRadius;
+    public float explosionRadius;
 
     private void OnTriggerEnter()
     {
         Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRadius, enemyLayer);
-        //OnDrawGizmosSelected();
         foreach (Collider enemy in enemies)
         {
             enemy.gameObject.GetComponent<EnemyBase>().TakeDamage(damage);
@@ -17,10 +16,4 @@ public class MageBullet : BulletBehaviour
 
         Destroy(this.gameObject);
     }
-
-    /*void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
-    }*/
 }
