@@ -10,6 +10,7 @@ public class Castle : MonoBehaviour
     void Start()
     {
         currentHP = maxHP;
+        print(currentHP);
     }
 
     void Update()
@@ -34,9 +35,12 @@ public class Castle : MonoBehaviour
     {
         currentHP -= value;
 
+        print(currentHP);
+
         if (currentHP <= 0)
         {
             Time.timeScale = 0;
+            print("GG nice tutorial");
         }
     }
 }
