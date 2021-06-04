@@ -71,6 +71,8 @@ public class EnemyBase : MonoBehaviour
 
             GameManager.Instance.money += money;
 
+            GameManager.Instance.UpdateMoneyText();
+
             Destroy(this.gameObject);
         }
     }

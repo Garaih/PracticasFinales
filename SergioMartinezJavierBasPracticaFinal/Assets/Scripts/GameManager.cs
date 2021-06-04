@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public int[] killsToIncreaseRound;
     int enemiesKilled;
 
+    CanvasManager cm;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -18,12 +20,11 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
-    }
+        cm = FindObjectOfType<CanvasManager>();
 
-    void Update()
-    {
-        
+        money = 100;
+
+        UpdateMoneyText();
     }
 
     public void CheckRound()
@@ -35,5 +36,10 @@ public class GameManager : MonoBehaviour
             enemiesKilled = 0;
             currentRound++;
         }
+    }
+
+    public void UpdateMoneyText()
+    {
+        cm.moneyText.text = "Money: " + money;
     }
 }

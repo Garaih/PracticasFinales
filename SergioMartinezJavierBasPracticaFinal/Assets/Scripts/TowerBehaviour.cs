@@ -13,7 +13,7 @@ public class TowerBehaviour : MonoBehaviour
     public int radius;
     public int cost;
     public int level;
-    bool maxLevel = false;
+    public bool maxLevel = false;
 
     public float cadence;
     float shootTimer;
