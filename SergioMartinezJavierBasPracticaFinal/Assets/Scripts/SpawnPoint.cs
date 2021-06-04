@@ -53,7 +53,7 @@ public class SpawnPoint : MonoBehaviour
                 }
             }
 
-            else if (GameManager.Instance.currentRound < 4)
+            else
             {
                 int value = Random.Range(0, enemiesToSpawn.Length);
 
