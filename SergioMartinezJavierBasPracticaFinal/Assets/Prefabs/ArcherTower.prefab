@@ -52,6 +52,7 @@ MonoBehaviour:
   radius: 10
   cost: 100
   level: 1
+  maxLevel: 0
   cadence: 0.5
   enemyLayer:
     serializedVersion: 2

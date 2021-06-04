@@ -49,7 +49,7 @@ MonoBehaviour:
   firePoint: {fileID: 7431668945405729501}
   damage: 10
   bulletSpeed: 20
-  radius: 10
+  radius: 12
   cost: 200
   level: 1
   maxLevel: 0
