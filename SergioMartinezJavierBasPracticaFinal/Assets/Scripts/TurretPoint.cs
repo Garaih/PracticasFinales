@@ -51,7 +51,7 @@ public class TurretPoint : MonoBehaviour
 
         cm.interactPoint = this;
 
-        cm.parentPivot.localPosition = Camera.main.WorldToScreenPoint(transform.position);
+        cm.parentPivot.localPosition = transform.position;
 
         cm.shopPanel.SetActive(true);
 
