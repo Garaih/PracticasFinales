@@ -29,10 +29,13 @@ public class GameManager : MonoBehaviour
     {
         enemiesKilled++;
 
-        if (enemiesKilled >= killsToIncreaseRound[currentRound])
+        if (currentRound <= killsToIncreaseRound.Length - 1)
         {
-            enemiesKilled = 0;
-            currentRound++;
+            if (enemiesKilled >= killsToIncreaseRound[currentRound])
+            {
+                enemiesKilled = 0;
+                currentRound++;
+            }
         }
     }
 
