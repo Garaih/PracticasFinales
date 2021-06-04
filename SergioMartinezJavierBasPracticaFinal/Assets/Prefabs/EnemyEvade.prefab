@@ -115,7 +115,7 @@ MonoBehaviour:
   turnDistance: 2
   damage: 5
   maxHP: 50
-  money: 10
+  money: 50
   canMove: 0
 --- !u!54 &6523972049151517016
 Rigidbody:

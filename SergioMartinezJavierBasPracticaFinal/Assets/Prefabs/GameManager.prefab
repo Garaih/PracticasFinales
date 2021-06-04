@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f8d732b07ad5f4e9413cba184bcd8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
+  money: 300
   currentRound: 0
   killsToIncreaseRound: 050000000a0000000f00000014000000190000001e000000

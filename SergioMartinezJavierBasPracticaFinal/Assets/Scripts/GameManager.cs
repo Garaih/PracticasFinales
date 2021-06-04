@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public int money;
+    public int money = 300;
     public int currentRound;
     public int[] killsToIncreaseRound;
     int enemiesKilled;
@@ -21,8 +21,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         cm = FindObjectOfType<CanvasManager>();
-
-        money = 100;
 
         UpdateMoneyText();
     }
